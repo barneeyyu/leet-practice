@@ -18,6 +18,8 @@ on:
 jobs:
   update-readme:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write  # 給予寫入內容的權限
 
     steps:
     - name: Checkout code
@@ -45,5 +47,5 @@ jobs:
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
         git add array/README.md binary_tree/README.md dfs_bfs/README.md dynamic_programming/README.md greedy/README.md hashmap/README.md sliding_window/README.md stack_queue/README.md string/README.md two_pointers/README.md
-        git diff --cached --quiet || git commit -m "Auto-update hashmap README"
+        git diff --cached --quiet || git commit -m "Auto-update README files"
         git push
