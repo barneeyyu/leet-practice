@@ -13,6 +13,7 @@ on:
       - 'stack_queue/**'
       - 'string/**'
       - 'two_pointers/**'
+      - 'scripts/**'  # 添加這行以便腳本更新時也觸發
     branches: [ main ]
 
 jobs:
@@ -32,9 +33,13 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install requests
+        pip list  # 列出已安裝的套件，用於調試
 
     - name: Run script to update README
-      run: python scripts/update_readmes.py
+      run: |
+        which python
+        python -c "import sys; print(sys.path)"
+        python scripts/update_readmes.py
 
     - name: Commit and push if changed
       run: |
