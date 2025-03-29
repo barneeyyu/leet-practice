@@ -5,15 +5,12 @@
 ## 📂 題型分類
 
 - [Array](./array)
+- [Binary Tree](./binary_tree)
+- [dfs & bfs](./dfs_bfs)
+- [Dynamic Programming](./dynamic_programming)
 - [Greedy](./greedy)
-- [String](./string)
 - [HashMap](./hashmap)
+- [Sliding Window](./sliding_window)
+- [String](./string)
 - [Stack / Queue](./stack_queue)
-
----
-
-## 📈 題目總表（之後可以補上）
-
-| 題號 | 題目名稱 | 題型 | 解法 |
-|------|-----------|------|------|
-|      |           |      |      |
+- [Two Pointers](./twopointers)
