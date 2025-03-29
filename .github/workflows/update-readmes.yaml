@@ -1,0 +1,40 @@
+name: Update Topic README
+
+on:
+  push:
+    paths:
+      - 'array/**'
+      - 'binary_tree/**'
+      - 'dfs_bfs/**'
+      - 'dynamic_programming/**'
+      - 'greedy/**'
+      - 'hashmap/**'
+      - 'sliding_window/**'
+      - 'stack_queue/**'
+      - 'string/**'
+      - 'two_pointers/**'
+    branches: [ main ]
+
+jobs:
+  update-readme:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Run script to update README
+      run: python scripts/update_readmes.py
+
+    - name: Commit and push if changed
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add array/README.md binary_tree/README.md dfs_bfs/README.md dynamic_programming/README.md greedy/README.md hashmap/README.md sliding_window/README.md stack_queue/README.md string/README.md two_pointers/README.md
+        git diff --cached --quiet || git commit -m "Auto-update hashmap README"
+        git push
