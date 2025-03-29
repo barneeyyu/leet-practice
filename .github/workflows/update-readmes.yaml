@@ -13,7 +13,6 @@ on:
       - 'stack_queue/**'
       - 'string/**'
       - 'two_pointers/**'
-      - 'scripts/**'  # 添加這行以便腳本更新時也觸發
     branches: [ main ]
 
 jobs:
