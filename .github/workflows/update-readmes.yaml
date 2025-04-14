@@ -42,9 +42,6 @@ jobs:
       run: |
         python scripts/update_readmes.py
 
-    - name: Pull remote changes
-      run: git pull origin main
-
     - name: Commit and push if changed
       uses: stefanzweifel/git-auto-commit-action@v4
       with:
