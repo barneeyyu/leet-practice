@@ -14,3 +14,10 @@
 - [String](./string)
 - [Stack / Queue](./stack_queue)
 - [Two Pointers](./twopointers)
+
+## 📈 目前進度
+<!-- stats-start -->
+![Easy](https://img.shields.io/badge/Easy-4-green)
+![Medium](https://img.shields.io/badge/Medium-2-yellow)
+![Hard](https://img.shields.io/badge/Hard-0-red)
+<!-- stats-end -->

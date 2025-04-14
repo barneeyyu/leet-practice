@@ -55,8 +55,31 @@ def generate_readme(folder_name):
         f.write(readme_content)
 
 
+def update_main_readme(stats):
+    """Update top-level README.md difficulty badge section."""
+    stats_block = (
+        "<!-- stats-start -->\n"
+        f"![Easy](https://img.shields.io/badge/Easy-{stats['Easy']}-green)\n"
+        f"![Medium](https://img.shields.io/badge/Medium-{stats['Medium']}-yellow)\n"  # noqa: E501
+        f"![Hard](https://img.shields.io/badge/Hard-{stats['Hard']}-red)\n"
+        "<!-- stats-end -->"
+    )
+
+    readme_path = "README.md"
+    with open(readme_path, "r+", encoding="utf-8") as f:
+        content = f.read()
+        start = content.find("<!-- stats-start -->")
+        end = content.find("<!-- stats-end -->") + len("<!-- stats-end -->")
+        if start != -1 and end != -1:
+            new_content = content[:start] + stats_block + content[end:]
+            f.seek(0)
+            f.write(new_content)
+            f.truncate()
+
+
 def main():
-    for folder in [
+    difficulty_count = {"Easy": 0, "Medium": 0, "Hard": 0}
+    folders = [
         "array",
         "binary_tree",
         "dfs_bfs",
@@ -67,9 +90,23 @@ def main():
         "stack_queue",
         "string",
         "two_pointers",
-    ]:
+    ]
+
+    for folder in folders:
         if os.path.isdir(folder):
             generate_readme(folder)
+        for entry in os.listdir(folder):
+            full_path = os.path.join(folder, entry)
+            if os.path.isdir(full_path) and not entry.startswith("."):
+                parts = entry.split("_", 1)
+                if len(parts) == 2:
+                    problem_number = parts[0].strip()
+                    difficulty = get_problem_difficulty(problem_number)
+                    print(f"Parsed {entry} → #{problem_number} → {difficulty}")
+                    if difficulty in difficulty_count:
+                        difficulty_count[difficulty] += 1
+
+    update_main_readme(difficulty_count)
 
 
 if __name__ == "__main__":
