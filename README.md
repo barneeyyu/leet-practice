@@ -5,7 +5,7 @@
 ## 📂 題型分類
 
 - [Array](./array)
-- [Binary Tree](./binary_tree)
+- [Binary Search](./binary_search)
 - [dfs & bfs](./dfs_bfs)
 - [Dynamic Programming](./dynamic_programming)
 - [Greedy](./greedy)

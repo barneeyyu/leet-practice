@@ -81,7 +81,7 @@ def main():
     difficulty_count = {"Easy": 0, "Medium": 0, "Hard": 0}
     folders = [
         "array",
-        "binary_tree",
+        "binary_search",
         "dfs_bfs",
         "dynamic_programming",
         "greedy",
@@ -95,17 +95,19 @@ def main():
     for folder in folders:
         if os.path.isdir(folder):
             generate_readme(folder)
-        for entry in os.listdir(folder):
-            full_path = os.path.join(folder, entry)
-            if os.path.isdir(full_path) and not entry.startswith("."):
-                parts = entry.split("_", 1)
-                if len(parts) == 2:
-                    problem_number = parts[0].strip()
-                    difficulty = get_problem_difficulty(problem_number)
-                    if difficulty in difficulty_count:
-                        difficulty_count[difficulty] += 1
+
+            for entry in os.listdir(folder):
+                full_path = os.path.join(folder, entry)
+                if os.path.isdir(full_path) and not entry.startswith("."):
+                    parts = entry.split("_", 1)
+                    if len(parts) == 2:
+                        problem_number = parts[0].strip()
+                        difficulty = get_problem_difficulty(problem_number)
+                        if difficulty in difficulty_count:
+                            difficulty_count[difficulty] += 1
 
     update_main_readme(difficulty_count)
+    print("Updated main README with difficulty stats.")
 
 
 if __name__ == "__main__":
