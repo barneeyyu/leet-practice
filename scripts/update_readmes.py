@@ -102,7 +102,6 @@ def main():
                 if len(parts) == 2:
                     problem_number = parts[0].strip()
                     difficulty = get_problem_difficulty(problem_number)
-                    print(f"Parsed {entry} → #{problem_number} → {difficulty}")
                     if difficulty in difficulty_count:
                         difficulty_count[difficulty] += 1
 
