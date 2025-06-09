@@ -13,7 +13,6 @@ func lengthOfLongestSubstring(s string) int {
 		}
 		charMap[char] = right
 		maxLen = max(maxLen, right-left+1)
-		fmt.Println(int(char), charMap[char], right, left, maxLen)
 	}
 
 	return maxLen
