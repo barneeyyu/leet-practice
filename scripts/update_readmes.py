@@ -90,6 +90,7 @@ def main():
         "stack_queue",
         "string",
         "two_pointers",
+        "linked_list",
     ]
 
     for folder in folders:
