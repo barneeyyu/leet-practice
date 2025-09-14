@@ -17,7 +17,7 @@
 
 ## 📈 目前進度
 <!-- stats-start -->
-![Easy](https://img.shields.io/badge/Easy-10-green)
-![Medium](https://img.shields.io/badge/Medium-9-yellow)
+![Easy](https://img.shields.io/badge/Easy-11-green)
+![Medium](https://img.shields.io/badge/Medium-10-yellow)
 ![Hard](https://img.shields.io/badge/Hard-0-red)
 <!-- stats-end -->
