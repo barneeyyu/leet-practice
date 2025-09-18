@@ -14,6 +14,7 @@
 - [String](./string)
 - [Stack / Queue](./stack_queue)
 - [Two Pointers](./twopointers)
+- [Tree](./tree)
 
 ## 📈 目前進度
 <!-- stats-start -->

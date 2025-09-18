@@ -91,6 +91,7 @@ def main():
         "string",
         "two_pointers",
         "linked_list",
+        "tree",
     ]
 
     for folder in folders:
